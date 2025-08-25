@@ -1,79 +1,62 @@
-# Desafio Técnico Fullstack Júnior - JTech
+# Desafio Técnico Backend Júnior - JTech
 
-## Aplicação TODO List Completa (Frontend + Backend)
+## API RESTful para Gerenciamento de Tarefas
 
 ### Contextualização e Objetivo
 
-A **JTech** busca identificar desenvolvedores versáteis capazes de construir aplicações web completas, demonstrando competência tanto no desenvolvimento backend quanto frontend. Este desafio avalia sua capacidade de integração entre tecnologias e entrega de soluções end-to-end.
+A **JTech** busca identificar profissionais que demonstrem sólido conhecimento nos fundamentos do desenvolvimento backend. Este desafio técnico foi elaborado para avaliar suas competências na construção de APIs RESTful utilizando Java e Spring Boot.
 
-**Objetivo:** Desenvolver uma aplicação TODO List completa, integrando um backend robusto com um frontend interativo, demonstrando domínio em toda a stack de desenvolvimento web moderna.
+**Objetivo:** Desenvolver uma API completa para gerenciamento de tarefas (TODO List), aplicando boas práticas de desenvolvimento, arquitetura limpa e documentação técnica de qualidade.
 
 ## Especificações Técnicas
 
-### Backend - API RESTful
+### Requisitos Funcionais
 
-1. **Endpoints Obrigatórios** para gerenciamento de tarefas:
-   * `POST /tasks`: Criar nova tarefa
-   * `GET /tasks`: Listar todas as tarefas
-   * `PUT /tasks/{id}`: Atualizar tarefa existente (título, descrição, status)
-   * `DELETE /tasks/{id}`: Remover tarefa
-2. **Persistência de Dados**: Implementar armazenamento em banco de dados (H2 em memória ou PostgreSQL).
-3. **Validação Robusta**: Validar todas as entradas de dados (ex: título obrigatório e não vazio).
-4. **Tratamento de Erros**: Retornar códigos HTTP adequados e mensagens de erro estruturadas.
+1. **Criar Tarefa**: Endpoint `POST /tasks` para adicionar uma nova tarefa. A tarefa deve conter título, descrição e status (ex: "pendente", "concluída").
+2. **Listar Tarefas**: Endpoint `GET /tasks` para retornar todas as tarefas cadastradas.
+3. **Buscar Tarefa por ID**: Endpoint `GET /tasks/{id}` para obter os detalhes de uma tarefa específica.
+4. **Atualizar Tarefa**: Endpoint `PUT /tasks/{id}` para atualizar o título, a descrição ou o status de uma tarefa.
+5. **Deletar Tarefa**: Endpoint `DELETE /tasks/{id}` para remover uma tarefa do sistema.
 
-### Frontend - Interface Interativa
+### Requisitos Não Funcionais
 
-1. **Interface Completa** para consumo da API:
-   * Exibição organizada da lista de tarefas
-   * Formulário para adição de novas tarefas
-   * Funcionalidade de edição inline ou modal
-   * Sistema de remoção com confirmação
-   * Toggle para marcar/desmarcar como concluída
-2. **Arquitetura de Componentes**: Organização modular em componentes Vue reutilizáveis.
-3. **Design Responsivo**: Interface adaptável para diferentes dispositivos e tamanhos de tela.
+1. **Persistência de Dados**: As tarefas devem ser armazenadas em banco de dados. Recomenda-se H2 (em memória) para simplificação ou PostgreSQL para demonstrar conhecimento em bancos relacionais.
+2. **Validação de Dados**: Implementar validação robusta das entradas do usuário (ex: título da tarefa obrigatório e não vazio).
+3. **Tratamento de Erros**: A API deve retornar códigos de status HTTP apropriados e mensagens de erro claras (ex: 404 para tarefa não encontrada, 400 para dados inválidos).
 
 ### Stack Tecnológica Obrigatória
 
-**Backend:**
-
-* Linguagem: Java
-* Framework: Spring Boot
-* Persistência: Spring Data JPA com Hibernate
-* Banco de Dados: H2 (em memória) ou PostgreSQL
-* Testes: Testes unitários (JUnit/Mockito)
-
-**Frontend:**
-
-* Framework: Vue 3 (Composition API)
-* Gerenciamento de Estado: Pinia
-* Estilização: Material Design (Vuetify ou biblioteca similar)
-* Testes: Testes unitários (Vitest)
+* **Linguagem**: Java
+* **Framework**: Spring Boot
+* **Persistência**: Spring Data JPA com Hibernate
+* **Banco de Dados**: H2 (em memória) ou PostgreSQL
+* **Testes**: Testes unitários com JUnit/Mockito.
 
 ## Critérios de Avaliação
 
-* **Integração Frontend-Backend**: Comunicação eficiente e correta entre cliente e servidor.
-* **Qualidade e Organização do Código**: Código limpo e bem estruturado em ambas as camadas.
-* **Aplicação de Boas Práticas**: Implementação de princípios Clean Code e KISS.
-* **Funcionalidade Completa**: Todos os requisitos funcionais implementados e integrados.
-* **Testes Automatizados**: Cobertura de testes unitários para componentes críticos do backend e frontend.
-* **Uso Adequado da Stack**: Utilização correta e eficiente de todas as tecnologias propostas.
-* **Experiência do Usuário**: Interface intuitiva com feedback adequado para ações do usuário.
+* **Qualidade e Organização do Código**: Código limpo, legível e seguindo as convenções do Java.
+* **Aplicação de Boas Práticas**: Utilização de princípios como Clean Code e KISS.
+* **Funcionalidade**: Todos os endpoints devem funcionar conforme especificado.
+* **Testes Automatizados**: Cobertura de testes unitários para as classes de serviço e controllers.
+* **Uso Adequado da Stack**: Configuração correta do Spring Boot, JPA e do banco de dados.
+* **Modelagem de Dados**: Estrutura da entidade `Task` bem definida.
+* **Controle de Versão**: Commits claros e lógicos no Git.
 
 ## Expectativa de Entrega
 
 * **Prazo**: Até 3 dias corridos a partir do recebimento.
-* **Formato**: Repositório Git único contendo pastas `frontend` e `backend`, com `README.md` na raiz.
+* **Formato**: Entregar o código-fonte em um repositório Git, acompanhado de um `README.md` completo.
 
 ### Estrutura Obrigatória do `README.md`
 
-1. **Visão Geral do Projeto**: Descrição completa da aplicação e arquitetura.
-2. **Stack Utilizada**: Lista detalhada das tecnologias backend e frontend.
-3. **Como Rodar Localmente**: Instruções passo a passo para inicializar backend e frontend.
-4. **Como Rodar os Testes**: Comandos para executar testes de ambas as camadas.
-5. **Estrutura de Pastas**: Explicação da organização do projeto completo.
-6. **Decisões Técnicas**: Justificativas para escolhas arquiteturais e tecnológicas.
-7. **Melhorias Futuras**: Propostas para evolução da aplicação.
+1. **Visão Geral do Projeto**: Breve descrição da API e seus objetivos.
+2. **Stack Utilizada**: Lista das tecnologias implementadas.
+3. **Como Rodar Localmente**: Instruções para configurar o ambiente, instalar dependências e iniciar o servidor.
+4. **Como Rodar os Testes**: Comando para executar os testes.
+5. **Estrutura de Pastas**: Explicação da organização do projeto.
+6. **Decisões Técnicas**: Justificativas para as escolhas feitas (ex: por que usou H2 em vez de PostgreSQL).
+7. **Melhorias Futuras**: Sugestões para evoluir a API.
 
 ---
 
-**Boa sorte! A JTech está ansiosa para conhecer sua solução fullstack.**
+**Boa sorte! A JTech está ansiosa para conhecer sua solução.**

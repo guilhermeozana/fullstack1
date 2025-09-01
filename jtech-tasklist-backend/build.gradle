@@ -39,6 +39,7 @@ dependencies {
 	testImplementation "com.google.code.bean-matchers:bean-matchers:0.14"
 	testImplementation "org.junit.platform:junit-platform-suite-engine:1.9.2"
 	testRuntimeOnly "com.h2database:h2"
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'

@@ -1,4 +1,4 @@
-# Desafio Técnico Backend Júnior - JTech
+# Desafio Técnico Fullstack 1 - JTech
 
 ## API RESTful para Gerenciamento de Tarefas
 

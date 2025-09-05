@@ -1,15 +1,15 @@
 /*
-*  @(#)TasklistResponse.java
-*
-*  Copyright (c) J-Tech Solucoes em Informatica.
-*  All Rights Reserved.
-*
-*  This software is the confidential and proprietary information of J-Tech.
-*  ("Confidential Information"). You shall not disclose such Confidential
-*  Information and shall use it only in accordance with the terms of the
-*  license agreement you entered into with J-Tech.
-*
-*/
+ *  @(#)TasklistResponse.java
+ *
+ *  Copyright (c) J-Tech Solucoes em Informatica.
+ *  All Rights Reserved.
+ *
+ *  This software is the confidential and proprietary information of J-Tech.
+ *  ("Confidential Information"). You shall not disclose such Confidential
+ *  Information and shall use it only in accordance with the terms of the
+ *  license agreement you entered into with J-Tech.
+ *
+ */
 package br.com.jtech.tasklist.adapters.input.protocols;
 
 import br.com.jtech.tasklist.application.core.domains.Tasklist;
@@ -26,10 +26,10 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
-* class TasklistResponse 
-* 
-* user angelo.vicente 
-*/
+ * class TasklistResponse
+ *
+ * user angelo.vicente
+ */
 @Data
 @Builder
 @NoArgsConstructor
@@ -37,12 +37,20 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TasklistResponse implements Serializable {
+
     private String id;
-    List<TasklistResponse> responses;
+    private String title;
+    private String description;
+    private String status;
+
+    private List<TasklistResponse> responses;
 
     public static TasklistResponse of(Tasklist tasklist) {
         return TasklistResponse.builder()
                 .id(tasklist.getId())
+                .title(tasklist.getTitle())
+                .description(tasklist.getDescription())
+                .status(tasklist.getStatus().name())
                 .build();
     }
 
@@ -56,6 +64,7 @@ public class TasklistResponse implements Serializable {
     public static TasklistResponse of(TasklistEntity entity) {
         var response = new TasklistResponse();
         BeanUtils.copyProperties(entity, response);
+        response.setId(entity.getId() != null ? entity.getId().toString() : null);
         return response;
     }
 }

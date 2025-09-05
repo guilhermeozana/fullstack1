@@ -35,6 +35,7 @@ public class ApiError {
     private LocalDateTime timestamp;
     private String message;
     private String debugMessage;
+    private String path;
     private List<ApiSubError> subErrors;
 
     private ApiError() {

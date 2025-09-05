@@ -97,7 +97,7 @@ Example of a task displayed in the list:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/jtech-solutions/jtech-tasklist-frontend.git
+git clone https://github.com/guilhermeozana/fullstack1.git
 cd jtech-tasklist-frontend
 npm install
 npm run dev

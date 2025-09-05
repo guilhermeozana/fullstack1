@@ -54,6 +54,8 @@ The project is organized into the following layers:
 
 ## How to use
 
+
+
 ### Create a task
 
 ```http
@@ -172,8 +174,8 @@ DELETE /api/v1/tasklists/1
 
 ### Backend
 ```bash
-git clone https://github.com/jtech-solutions/jtech-tasklist.git
-cd jtech-tasklist
+git clone https://github.com/guilhermeozana/fullstack1.git
+cd jtech-tasklist-backend
 ./mvnw spring-boot:run
 ```
 
@@ -189,10 +191,10 @@ http://localhost:8080/api/v1/tasklists
 - [ ] Add Swagger/OpenAPI documentation  
 - [ ] Implement pagination and filtering  
 - [ ] Add authentication and authorization (JWT)  
-- [ ] Improve test coverage (unit + integration)  
 - [ ] Add support for task deadlines and priorities  
 - [ ] Internationalize error messages  
 - [ ] Add sorting and search capabilities  
 
 ---
+
 

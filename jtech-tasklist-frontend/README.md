@@ -99,3 +99,5 @@ Example of a task displayed in the list:
 ```bash
 git clone https://github.com/jtech-solutions/jtech-tasklist-frontend.git
 cd jtech-tasklist-frontend
+npm install
+npm run dev
